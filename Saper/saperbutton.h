@@ -30,10 +30,7 @@ public:
     explicit SaperButton(QString** fieldContents, int rows, int cols, int x, int y, QString buttonContents = "", QPushButton *parent = 0);
 
     void showButtonContents();
-    QString getContent(){ return buttonContents; }
-
-    //QString getContents() { return contents; }
-    //void setContents(QString text) { contents = text; }
+    QString getContents(){ return buttonContents; }
 
 signals:
     void rClicked();

@@ -16,12 +16,12 @@ class Widget : public QWidget
 private:
     const static int SIZE = 4;
     QMap<QPair<int, int>, SaperButton*> buttonsField;
-    //SaperButton*** buttonsField;
+    QString**  fieldContext;
 
-    QLabel* informationLabel;
     QGridLayout* gridLayout;
     QVBoxLayout* vboxLayout;
 
+    QLabel* informationLabel;
     QPushButton* buttonNewGame;
 
 public:

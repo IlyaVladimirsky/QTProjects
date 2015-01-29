@@ -13,7 +13,6 @@ Widget::Widget(QWidget *parent)
 
     setFixedSize(150, 190);
 
-    QString**  fieldContext;
     fieldContext = new QString*[SIZE];
     for(int i = 0; i < SIZE; ++i)
         fieldContext[i] = new QString[SIZE];
@@ -74,6 +73,10 @@ Widget::~Widget(){
     foreach (SaperButton* button, buttonsField)
         delete button;
 
+    for(int i = 0; i < SIZE; ++i)
+        delete fieldContext[i];
+    delete fieldContext;
+
     delete vboxLayout;
 }
 
@@ -95,7 +98,7 @@ void Widget::checkingForWin(){
     for(int i = 0; i < SIZE; ++i)
         for(int j = 0; j < SIZE; ++j){
             SaperButton* curButton = buttonsField.value(QPair<int, int>(i, j));
-            if((!curButton->isChecked() && curButton->getContent() != "*"))
+            if((!curButton->isChecked() && curButton->getContents() != "*"))
                 return;
         }
     informationLabel->setText("You win!");
