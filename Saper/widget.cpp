@@ -66,6 +66,7 @@ void Widget::closeAllCells(){
             SaperButton* curButton = buttonsField.value(QPair<int, int>(i, j));
             curButton->setChecked(false);
             curButton->setText("");
+            repaint();
         }
 }
 
@@ -91,7 +92,7 @@ void Widget::explosion(){
 
 void Widget::newGame(){
     informationLabel->setText("");
-    closeAllCells();    
+    closeAllCells();
 }
 
 void Widget::checkingForWin(){
@@ -101,5 +102,7 @@ void Widget::checkingForWin(){
             if((!curButton->isChecked() && curButton->getContents() != "*"))
                 return;
         }
+    openAllCells();
     informationLabel->setText("You win!");
+    repaint();
 }
