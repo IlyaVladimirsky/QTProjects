@@ -1,13 +1,15 @@
 #include "widget.h"
 
 void Widget::fieldAutoFilling(){
-    mining(3);
+    mining(BOMBS);
     digitsAlloc();
 }
 
 void Widget::mining(int minesCount){
     int x;
     int y;
+    qsrand(QDateTime::currentDateTime().toTime_t() );
+
 
     for(int i = 0; i < minesCount; ++i){
         do{
@@ -19,12 +21,8 @@ void Widget::mining(int minesCount){
 }
 
 int Widget::generateNumb(int to, int from){
-//    QTime midnight(0,0,0);
-//    qsrand(midnight.secsTo(QTime::currentTime()));
-    QTime time = QTime::currentTime();
-    qsrand((uint)time.msec());
 
-    return (qrand() % to - from);
+   return (qrand() % to - from);
 }
 
 void Widget::digitsAlloc(){
@@ -86,7 +84,7 @@ Widget::Widget(QWidget *parent)
 
     gridLayout->setSpacing(0);
 
-    setFixedSize(150, 190);
+    setFixedSize(170, 215);
 
     fieldContext = new QString*[SIZE];
     for(int i = 0; i < SIZE; ++i)

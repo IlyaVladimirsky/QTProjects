@@ -21,7 +21,7 @@ SaperButton::SaperButton(QString** fieldContents, int rows, int cols, int x, int
     buttonPosX(x),
     buttonPosY(y)
 {
-    setFixedSize(30, 30);
+    setFixedSize(25, 25);
     setCheckable(true);
     connect(this, &SaperButton::rClicked, &SaperButton::changeLable);
     connect(this, &SaperButton::lClicked, &SaperButton::demining);

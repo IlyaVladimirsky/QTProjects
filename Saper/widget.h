@@ -15,7 +15,8 @@ class Widget : public QWidget
     Q_OBJECT
 
 private:
-    const static int SIZE = 4;
+    const static int SIZE = 6;
+    const static int BOMBS = 6;
     QMap<QPair<int, int>, SaperButton*> buttonsField;
     QString**  fieldContext;
 
