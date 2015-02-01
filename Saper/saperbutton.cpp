@@ -53,6 +53,8 @@ void SaperButton::demining(){
         return;
     }
 
+    emit checkingForWin();
+
     if(text() != "")
         return;
 
@@ -63,7 +65,5 @@ void SaperButton::demining(){
     cellAutoOpening(buttonPosX,     buttonPosY - 1);
     cellAutoOpening(buttonPosX - 1, buttonPosY - 1);
     cellAutoOpening(buttonPosX - 1, buttonPosY );
-    cellAutoOpening(buttonPosX - 1, buttonPosY + 1);
-
-    emit checkingForWin();
+    cellAutoOpening(buttonPosX - 1, buttonPosY + 1);    
 }

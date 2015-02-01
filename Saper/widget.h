@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QPalette>
 #include <QLabel>
+#include <QTime>
 #include "saperbutton.h"
 //#include "fieldgridlayout.h"
 
@@ -22,7 +23,17 @@ private:
     QVBoxLayout* vboxLayout;
 
     QLabel* informationLabel;
-    QPushButton* buttonNewGame;
+    QPushButton* buttonNewGame;    
+
+    void fieldAutoFilling();
+    void mining(int minesCount);
+    int generateNumb(int to, int from = 0);
+    void digitsAlloc();
+    int countBombsAround(int x, int y);
+    bool isBomb(int x, int y);
+
+    void setButtonsContext();
+    void fieldClearing();
 
 public:
     Widget(QWidget *parent = 0);

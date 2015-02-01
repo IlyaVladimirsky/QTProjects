@@ -31,6 +31,7 @@ public:
 
     void showButtonContents();
     QString getContents(){ return buttonContents; }
+    void setContents(QString s){ buttonContents = s; }
 
 signals:
     void rClicked();
